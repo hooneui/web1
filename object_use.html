@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>ch33 객체 활용</title>
+	<link rel="stylesheet" href="../common/css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="../common/js/lib/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+	<h1>ch33 객체 활용</h1>
+
+	<h2><a href="#">WEB</a></h2>
+	토글버튼 : <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
+
+	<ol>
+		<li><a href="#">HTML</a></li>
+		<li><a href="#">CSS</a></li>
+		<li><a href="#">JavaScript</a></li>
+	</ol>
+
+	<h3>JavaScript</h3>
+	<p>- id대신 this 사용 <br>- 변수 사용으로 중복 제거<br>야무와 demun 한글 로렘입숨. 이상을 스며들어 우리는 거선의 운다. 것이다. 약동하다. 산야에 그들의 착목한는 풍부하게! 곧 사람은 아름다우냐? 그것을 것이 속에서, 사막이다. 현저하게 가장 사막이다. 설산에서? 그들에게 두손을 쓸쓸한 장식하는 뜨고, 그들의.</p>
+
+<script>
+	var Links = {
+		setColor:function(color){
+			// var alist = document.querySelectorAll('a');
+			// var i = 0;
+			// while(i < alist.length){
+			// 	alist[i].style.color = color;
+			// 	i = i + 1;
+			// }
+			$('a').css('color', color);
+		}
+	}
+	// function linksSetColor(color){
+	// 	var alist = document.querySelectorAll('a');
+	// 	var i = 0;
+	// 	while(i < alist.length){
+	// 		alist[i].style.color = color;
+	// 		i = i + 1;
+	// 	}
+	// }
+	var Body = {
+		setColor:function(color){
+			// document.querySelector('body').style.color = color;
+			$('body').css('color', color);
+		},
+		setBackgroundColor:function(color){
+			// document.querySelector('body').style.backgroundColor = color;
+			$('body').css('backgroundColor', color);
+		}
+	}
+	// function bodySetBackgroundColor(color){
+	// 	document.querySelector('body').style.backgroundColor = color;
+	// }
+	// function bodySetColor(color){
+	// 	document.querySelector('body').style.color = color;
+	// }
+	function nightDayHandler(self){
+		var target = document.querySelector('body');
+		if(self.value === 'night'){
+			Body.setBackgroundColor('black');
+			Body.setColor('white');
+			self.value='day';
+			Links.setColor('lightblue');
+		} else {
+			Body.setBackgroundColor('white');
+			Body.setColor('black');
+			self.value='night';
+			Links.setColor('blue');
+		}
+	}
+</script>
+</body>
+</html>
